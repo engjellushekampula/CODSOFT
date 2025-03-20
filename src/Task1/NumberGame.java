@@ -1,8 +1,8 @@
 package Task1;
 
-import java.util.Random;
-import java.util.Scanner;
+import Helper.Helper;
 
+import java.util.Random;
 public class NumberGame {
     public static void main(String[] args) {
         Random random = new Random();
@@ -13,7 +13,7 @@ public class NumberGame {
         int score = 0;
 
         do {
-            guessednumber = getNumberFromUser();
+            guessednumber = Helper.getNumberFromUser();
             gameCounter++;
             if (guessednumber == secretNumber) {
                 System.out.println("Congratulation! You found it with " + gameCounter + " attempts!");
@@ -26,14 +26,8 @@ public class NumberGame {
                 System.out.println("Too low!");
             }
         }
-        while(true) ;
-        System.out.println("Your score: " +score + "/" +gameCounter);
-    }
-    //creating a method for getting number from user
-    public static int getNumberFromUser (){
-        Scanner sc = new Scanner(System.in);
-        int number = sc.nextInt();
-        return number;
+        while (true);
+        System.out.println("Your score: " + score + "/" + gameCounter);
     }
 }
 

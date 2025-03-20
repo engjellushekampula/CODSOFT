@@ -1,5 +1,7 @@
 package Task3;
 
+import Helper.Helper;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -40,12 +42,12 @@ public class ATMtest {
 
                 case "deposit":
                     System.out.println("Enter the amount to deposit: ");
-                    atm.depositMoney(getAmountFromUser());
+                    atm.depositMoney(Helper.getAmountFromUser());
                     break;
 
                 case "withdraw":
                     System.out.println("Enter the amount to withdraw: ");
-                    atm.withdrawMoney(getAmountFromUser());
+                    atm.withdrawMoney(Helper.getAmountFromUser());
                     break;
 
                 default:
@@ -54,10 +56,5 @@ public class ATMtest {
         }
 
         sc.close();
-    }
-
-    public static double getAmountFromUser() {
-        Scanner sc = new Scanner(System.in);
-        return sc.nextDouble();
     }
 }
